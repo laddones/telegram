@@ -58,7 +58,7 @@ class ApiStorage:
     #     else:
     #         return ClientSchema.parse_obj(response_json)
 
-    async def get_person(self, search_person: SearchSchema) -> list[Person] | None:
+    async def get_person(self, search_person: SearchSchema) -> list[Person]:
         get_params = f'?first_name={search_person.first_name}' \
                      f'&last_name={search_person.last_name}' \
                      f'&middle_name={"" if search_person.middle_name is None else search_person.middle_name}' \
